@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Auto Zoom",
+  "description": "This extension automatically zooms in a page with a small font for Chrome users.",
+  "version": "1.0",
+
+  "browser_action": {
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["chrome-content-script.bundle.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "scripts": ["chrome-background-script.bundle.js"]
+  }
+}

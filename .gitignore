@@ -1,3 +1,7 @@
 .idea/
 autozoom.iml
 node_modules/
+npm-debug.log
+build/
+dist/
+
