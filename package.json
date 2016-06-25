@@ -1,0 +1,25 @@
+{
+  "name": "autozoom",
+  "version": "1.0.0",
+  "description": "Auto Zoom Chrome Extension",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+
+
+  "dependencies": {
+    "jquery": "^3.x",
+    "lodash": "^4.x"
+  },
+  "devDependencies": {
+    "webpack": "^1.x",
+    "webpack-dev-server": "^1.x",
+    "mocha": "^2.x",
+    "chai": "^3.x"
+  }
+
+
+}
