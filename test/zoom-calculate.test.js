@@ -20,30 +20,30 @@ describe('zoom', function() {
       assert.isUndefined(newZoom);
     });
 
-    it('suggess a new zoom when the predominant font size is less than 16 px', function() {
-      let newZoom = zoom.getNewZoom(1, {fontSize: 15, textLength: 1});
-      assert.strictEqual(newZoom, 16/15);
+    it('suggess a new zoom when the predominant font size is less than 15 px', function() {
+      let newZoom = zoom.getNewZoom(1, {fontSize: 14, textLength: 1});
+      assert.strictEqual(newZoom, 15/14);
     });
 
     it('does not suggest a new zoom when previously suggested a zoom for longer text', function () {
-      zoom.getNewZoom(1, {fontSize: 15, textLength: 2});
-      let newZoom = zoom.getNewZoom(1, {fontSize: 14, textLength: 1});
+      zoom.getNewZoom(1, {fontSize: 14, textLength: 2});
+      let newZoom = zoom.getNewZoom(1, {fontSize: 13, textLength: 1});
       assert.isUndefined(newZoom);
     });
 
     it('suggests a new zoom when previously suggested a zoom for shorter text', function () {
       zoom.getNewZoom(1, {fontSize: 15, textLength: 1});
       let newZoom = zoom.getNewZoom(1, {fontSize: 14, textLength: 2});
-      assert.strictEqual(newZoom, 16/14);
+      assert.strictEqual(newZoom, 15/14);
     });
 
     it('does not suggest a new zoom when the current zoom is the same', function () {
-      let newZoom = zoom.getNewZoom(16/14, {fontSize: 14, textLength: 1});
+      let newZoom = zoom.getNewZoom(15/14, {fontSize: 14, textLength: 1});
       assert.isUndefined(newZoom);
     });
 
     it('does not suggest a new zoom when the current zoom is larger', function () {
-      let newZoom = zoom.getNewZoom(16/14, {fontSize: 15, textLength: 1});
+      let newZoom = zoom.getNewZoom(16/13, {fontSize: 14, textLength: 1});
       assert.isUndefined(newZoom);
     });
 
@@ -52,12 +52,12 @@ describe('zoom', function() {
   describe('reset', function() {
 
     it('after the reset suggests a new zoom when previously suggested a different zoom for longer text', function () {
-      zoom.getNewZoom(1, {fontSize: 15, textLength: 2});
+      zoom.getNewZoom(1, {fontSize: 14, textLength: 2});
 
       zoom.reset();
-      let newZoom = zoom.getNewZoom(1, {fontSize: 14, textLength: 1});
+      let newZoom = zoom.getNewZoom(1, {fontSize: 13, textLength: 1});
 
-      assert.strictEqual(newZoom, 16/14);
+      assert.strictEqual(newZoom, 15/13);
     });
 
   });

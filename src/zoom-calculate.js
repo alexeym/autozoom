@@ -1,5 +1,5 @@
 
-const desiredPredominantFontSize = 16; // px
+const desiredPredominantFontSize = 15; // px
 let maxKnownLength = 0;
 let prevousZoom;
 
