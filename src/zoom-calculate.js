@@ -1,6 +1,7 @@
 
 const desiredPredominantFontSize = 16; // px
 let maxKnownLength = 0;
+let prevousZoom;
 
 module.exports = {
 

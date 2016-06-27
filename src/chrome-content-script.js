@@ -7,3 +7,7 @@ let predominantTextProperties = textPropertiesAggregate.getPredominantTextProper
 if ( predominantTextProperties ) {
   chrome.runtime.sendMessage(predominantTextProperties);
 }
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  chrome.runtime.sendMessage(predominantTextProperties);
+});

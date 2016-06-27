@@ -18,9 +18,8 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new pluginCopy([{
-      from: path.join(__dirname, 'src', 'manifest.json'),
-      to: path.join(__dirname, 'build')
-    }])
+    new pluginCopy([
+      { from: path.join(__dirname, 'resources'), to: path.join(__dirname, 'build') }
+    ])
   ]
 };
