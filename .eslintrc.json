@@ -6,7 +6,15 @@
       "jsx": false
     }
   },
-  "rules": {
-    "semi": 2
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "globals": {
+    "chrome": true
   }
 }

@@ -8,6 +8,6 @@ if ( predominantTextProperties ) {
   chrome.runtime.sendMessage(predominantTextProperties);
 }
 
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function() {
   chrome.runtime.sendMessage(predominantTextProperties);
 });

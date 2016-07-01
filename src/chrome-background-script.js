@@ -20,10 +20,10 @@ chrome.tabs.onCreated.addListener(function(tab) {
   updateIcon(tab.id);
 });
 
-chrome.runtime.onMessage.addListener(function(predominantTextProperties, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(predominantTextProperties) {
 
   chrome.tabs.query({ active: true }, function (tabs) {
-    tabId = tabs[0].id;
+    let tabId = tabs[0].id;
     chrome.tabs.getZoom(tabId, function (zoom) {
       let newZoom = zoomCalculator.getNewZoom(zoom, predominantTextProperties);
       if ( newZoom && !isDisabled) {
