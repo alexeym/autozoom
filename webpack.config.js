@@ -1,5 +1,5 @@
 let path = require('path');
-
+let webpack = require('webpack');
 let pluginClean = require('clean-webpack-plugin');
 let pluginCopy = require('copy-webpack-plugin');
 
@@ -11,6 +11,11 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: "[name].bundle.js"
+  },
+  module: {
+    preLoaders: [
+      {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+    ]
   },
   plugins: [
     new pluginClean(['dist', 'build'], {

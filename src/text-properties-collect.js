@@ -15,7 +15,7 @@ function getNodesFontSizesAndTextLengths(nodes) {
     return {
       fontSize: parseFloat($(node).css('font-size')),
       textLength: textLength
-    }
+    };
   };
 
   return _.map(nodes, getNodeFontSizeAndTextLength);
