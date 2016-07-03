@@ -35,7 +35,7 @@ describe('text-properties-aggregate', function () {
       {fontSize: 10, textLength: 1}
     ];
     let predominantTextProperties = textPropertiesAggregate.getPredominantTextProperties(textPropertiesArray);
-    assert.deepEqual(textPropertiesArray[0], {fontSize: 10, textLength: 1});
+    assert.deepEqual(predominantTextProperties, {fontSize: 30, textLength: 3});
   });
 
   
