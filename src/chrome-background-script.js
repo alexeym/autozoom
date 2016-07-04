@@ -38,7 +38,9 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   isDisabled = !isDisabled;
 
   zoomCalculator.reset();
-  updateIcon(tab.id);
+  chrome.tabs.query({}, function (tabs) {
+    tabs.forEach( tab => updateIcon(tab.id) )
+  });
   if (!isDisabled) {
     chrome.tabs.sendMessage(tab.id, {action: 'getPredominantText'});
   }

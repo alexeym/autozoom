@@ -3,7 +3,7 @@
 
   "name": "Auto Zoom",
   "description": "This extension automatically zooms in a page with a small font for Chrome users.",
-  "version": "1.0",
+  "version": "1.0.0",
 
   "browser_action": {
     "default_icon": {
