@@ -10,9 +10,11 @@
       "38": "icon-active-38.png"
     }
   },
+
   "permissions": [
     "activeTab"
   ],
+
   "content_scripts": [
     {
       "matches": ["*://*/*"],
@@ -21,7 +23,10 @@
       "all_frames": true
     }
   ],
+
   "background": {
     "scripts": ["chrome-background-script.bundle.js"]
-  }
+  },
+
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
